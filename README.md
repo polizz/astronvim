@@ -1,5 +1,7 @@
 # AstroNvim Template
 
+**Run Mason LSP install for language servers after first boot**
+
 **NOTE:** This is for AstroNvim v4+
 
 A template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim)
