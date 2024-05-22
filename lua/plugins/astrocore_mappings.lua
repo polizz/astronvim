@@ -17,13 +17,13 @@ return {
         n = {
           ["<Leader>a"] = { function() harpoon:list():append() end, desc = "Harpoon append" },
           ["<Leader>r"] = { function() harpoon:list():remove() end, desc = "Harpoon remove"  },
-          ["<C-f>"] = { function() harpoon.ui:toggle_quick_menu(harpoon:list()) end },
-          ["<C-j>"] = { function() harpoon:list():select(1) end, desc = "Harpoon File 1" },
-          ["<C-k>"] = { function() harpoon:list():select(2) end, desc = "Harpoon File 2" },
-          ["<C-l>"] = { function() harpoon:list():select(3) end, desc = "Harpoon File 3"  },
-          ["<C-i>"] = { function() harpoon:list():select(4) end, desc = "Harpoon File 4"  },
-          ["<C-[>"] = { function() harpoon:list():prev() end },
-          ["<C-]>"] = { function() harpoon:list():next() end },
+          ["<C-F>"] = { function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "Harpoon List"  },
+          ["<C-J>"] = { function() harpoon:list():select(1) end, desc = "Harpoon File 1" },
+          ["<C-K>"] = { function() harpoon:list():select(2) end, desc = "Harpoon File 2" },
+          ["<C-L>"] = { function() harpoon:list():select(3) end, desc = "Harpoon File 3"  },
+          ["<C-I>"] = { function() harpoon:list():select(4) end, desc = "Harpoon File 4"  },
+          ["<C-[>"] = { function() harpoon:list():prev() end, desc = "Harpoon Prev"   },
+          ["<C-]>"] = { function() harpoon:list():next() end, desc = "Harpoon Next"   },
           ["<Leader>qq"] = { function() _G.qrz.lookup() end, desc = "QRZ callsign lookup" },
           ["<Leader>fg"] = { ":Telescope live_grep<cr>", desc = "Live Grep"  },
           ["<Leader>bD"] = {
@@ -35,7 +35,7 @@ return {
             desc = "Pick to close",
           },
           ["<Leader>b"] = { name = "Buffers" },
-          ["<Leader>w"] = { ":w!<cr>", desc = "Save File" }, 
+          ["<Leader>w"] = { ":w!<cr>", desc = "Save File" },
         }
       }
     }
