@@ -15,8 +15,8 @@ return {
           ["kj"] = { "<ESC>", desc = "Escape" },
         },
         n = {
-          ["<Leader>a"] = { function() harpoon:list():append() end, desc = "Harpoon append" },
-          ["<Leader>r"] = { function() harpoon:list():remove() end, desc = "Harpoon remove"  },
+          ["<Leader>a"] = { function() harpoon:list():add() end, desc = "Harpoon Add" },
+          ["<Leader>r"] = { function() harpoon:list():remove() end, desc = "Harpoon Remove"  },
           ["<C-F>"] = { function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "Harpoon List"  },
           ["<C-J>"] = { function() harpoon:list():select(1) end, desc = "Harpoon File 1" },
           ["<C-K>"] = { function() harpoon:list():select(2) end, desc = "Harpoon File 2" },
