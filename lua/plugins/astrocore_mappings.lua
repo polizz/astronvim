@@ -26,14 +26,7 @@ return {
           ["<C-]>"] = { function() harpoon:list():next() end, desc = "Harpoon Next"   },
           ["<Leader>qq"] = { function() _G.qrz.lookup() end, desc = "QRZ callsign lookup" },
           ["<Leader>fg"] = { ":Telescope live_grep<cr>", desc = "Live Grep"  },
-          ["<Leader>bD"] = {
-            function()
-              require("astroui.status").heirline.buffer_picker(
-                function(bufnr) require("astrocore.buffer").close(bufnr) end
-              )
-            end,
-            desc = "Pick to close",
-          },
+          ["gR"] = { ":Telescope lsp_references<cr>", desc = "LSP References"},
           ["<Leader>b"] = { name = "Buffers" },
           ["<Leader>w"] = { ":w!<cr>", desc = "Save File" },
         }
