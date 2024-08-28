@@ -11,12 +11,18 @@ return {
   --   }},
   config = function()
     require("catppuccin").setup({
+      transparent_background = false,
+      color_overrides = {
+        -- latte = {
+          -- rosewater = "#c98272"
+        -- },
+      },
       highlight_overrides = {
-        latte = function(latte)
-          return {
-            NeoTreeCursorLine = {  bg = latte.surface0  },
-          }
-        end
+        -- latte = function(latte)
+        --   return {
+        --     NeoTreeCursorLine = {  bg = latte.surface1  },
+        --   }
+        -- end
         }
       })
     end
