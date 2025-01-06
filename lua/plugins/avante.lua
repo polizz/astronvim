@@ -1,12 +1,11 @@
 return {
   "yetone/avante.nvim",
-  enabled = false,
+  enabled = true,
   event = "VeryLazy",
   lazy = false,
   version = false, -- set this if you want to always pull the latest change
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",
-  -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
   dependencies = {
     "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
@@ -60,7 +59,7 @@ return {
   config = function()
     require("avante").setup({
       vendors = {
-        provider = "or_claude_sonnet_35", -- Recommend using Claude
+        provider = "claude_sonnet", -- Recommend using Claude
         deepseek_coder = {
           __inherited_from = "openai",
           api_key_name = "DEEPSEEK_API_KEY",
@@ -77,7 +76,7 @@ return {
           temperature = 0,
           max_tokens = 8192,
         },
-        or_claude_sonnet_35 = {
+        claude_sonnet = {
           __inherited_from = "openai",
           api_key_name = "OPENROUTER_API_KEY",
           endpoint = "https://openrouter.ai/api/v1/",
@@ -86,21 +85,8 @@ return {
           max_tokens = 8192,
         },
       },
-      provider = "deepseek_coder", -- Recommend using Claude
-      -- auto_suggestions_provider = "copilot", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
-      -- deepseek_chat = {
-      --   endpoint = "https://api.deepseek.com",
-      --   model = "deepseek-chat",
-      --   temperature = 0,
-      --   max_tokens = 8192,
-      -- },
-      -- deepseek_coder = {
-      --   endpoint = "https://api.deepseek.com",
-      --   model = "deepseek-coder",
-      --   temperature = 0,
-      --   max_tokens = 8192,
-      -- },
-
+      provider = "claude_sonnet", -- Recommend using Claude
+      auto_suggestions_provider = "copilot", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
       ---Specify the special dual_boost mode
       ---1. enabled: Whether to enable dual_boost mode. Default to false.
       ---2. first_provider: The first provider to generate response. Default to "openai".
