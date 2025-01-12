@@ -4,6 +4,8 @@ return {
     local harpoon = require("harpoon")
     harpoon:setup()
 
+    require("directed_goto_def").setup()
+
     _G.qrz = require("qrz")
 
     local astro = require("astrocore")

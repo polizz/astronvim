@@ -1,6 +1,6 @@
 return {
   "zbirenbaum/copilot.lua",
-  enabled = true,
+  enabled = false,
   cmd = "Copilot",
   event = "InsertEnter",
   config = function()
@@ -22,11 +22,11 @@ return {
       },
       suggestion = {
         enabled = true,
-        auto_trigger = true,
+        auto_trigger = false,
         hide_during_completion = true,
         debounce = 75,
         keymap = {
-          accept = "<C-l>",
+          accept = "<C-;>",
           accept_word = false,
           accept_line = false,
           next = "<C-]>",
