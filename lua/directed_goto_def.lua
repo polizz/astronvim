@@ -2,7 +2,7 @@ local M = {}
 
 -- Default configuration
 M.default_config = {
-    prefix = "ggd",
+    prefix = "gd",
     -- Default key mappings
     mappings = {
         up = "k", -- Open definition in a horizontal split above
