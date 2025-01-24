@@ -9,16 +9,20 @@ M.default_config = {
         right = "l", -- Open definition in a vertical split to the right
         down = "j", -- Open definition in a horizontal split below
         left = "h", -- Open definition in a vertical split to the left
+        win_right = '>', -- Open def in exissting right window
+        win_left = '<', -- Open def in exissting left window
     },
     -- Delay before navigating to the definition (in milliseconds)
     delay = 75,
 }
 
 local split_commands = {
-    up = "split | wincmd k",  -- Horizontal split (below) and move up
-    right = "vsplit",            -- Vertical split (left)
-    down = "split",             -- Horizontal split (below)
-    left = "vsplit | wincmd h", -- Vertical split (right) and move left
+    up = "split | wincmd k",         -- Horizontal split (below) and move up
+    right = "vsplit",                -- Vertical split (left)
+    down = "split",                  -- Horizontal split (below)
+    left = "vsplit | wincmd h",      -- Vertical split (right) and move left
+    win_right = "wincmd l", -- Move focus to the RIGHT window
+    win_left = "wincmd h"   -- Move focus to the LEFT window
 }
 
 local descriptions = {
@@ -26,6 +30,8 @@ local descriptions = {
     right = "Show definition in a split right",
     down = "Show definition in a split below",
     left = "Show definition in a split left",
+    win_right = "Show definition in a split right window",
+    win_left = "Show definition in existing left window",
 }
 
 -- Setup function
@@ -37,7 +43,7 @@ function M.setup(user_config)
     local function goto_definition_in_direction(map_dir)
         local cmd = split_commands[map_dir]
         if not cmd then
-            print("Invalid direction. Use h, j, k, or l.")
+            print("Invalid direction. Use h, j, k, l, > or <.")
             return
         end
         vim.cmd(cmd)

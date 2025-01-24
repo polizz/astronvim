@@ -6,6 +6,7 @@ return {
       harpoon:setup()
 
       require("directed_goto_def").setup()
+      local theme_toggle = require("theme_toggle").init()
 
       _G.qrz = require("qrz")
 
@@ -32,18 +33,7 @@ return {
             gR = { ":Telescope lsp_references<cr>", desc = "LSP References"},
             ["<Leader>b"] = { name = "Buffers" },
             ["<Leader>w"] = { ":w!<cr>", desc = "Save File" },
-            ["<Leader>ub"] = {
-              function()
-                require("astrocore.toggles").background()
-                -- invoke colorschemer to change to either "dark" or "light" theme file
-                if vim.go.background == "light" then
-                  local sig = os.execute('~/.config/alacritty/colorschemer/target/release/colorschemer --root ~/.config/alacritty --pick-file catppuccin_latte.toml')
-                else
-                  local sig = os.execute('~/.config/alacritty/colorschemer/target/release/colorschemer --root ~/.config/alacritty --pick-file catppuccin_mocha.toml')
-                end
-              end,
-              desc = "Toggle background"
-            }
+            ["<Leader>ub"] = { function() theme_toggle.toggle() end, desc = "Toggle background" }
           }
         }
       }
