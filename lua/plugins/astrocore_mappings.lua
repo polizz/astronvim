@@ -5,7 +5,6 @@ return {
       local harpoon = require("harpoon")
       harpoon:setup()
 
-      require("directed_goto_def").setup()
       local theme_toggle = require("theme_toggle").init()
 
       _G.qrz = require("qrz")
