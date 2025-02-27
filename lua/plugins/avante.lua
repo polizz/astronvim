@@ -60,27 +60,47 @@ return {
     require("avante").setup({
       vendors = {
         provider = "claude_sonnet", -- Recommend using Claude
-        deepseek_coder = {
+        deepseek_r1 = {
           __inherited_from = "openai",
-          api_key_name = "DEEPSEEK_API_KEY",
-          endpoint = "https://api.deepseek.com",
-          model = "deepseek-coder",
+          api_key_name = "OPENROUTER_API_KEY",
+          endpoint = "https://openrouter.ai/api/v1/",
+          model = "deepseek/deepseek-r1",
           temperature = 0,
           max_tokens = 8192,
+          disable_tools = true,
+          extra_request_body = {
+            provider= {
+              order= {
+                "DeepSeek",
+                "Together",
+                "Fireworks"
+              }
+            }
+          },
         },
-        deepseek_chat = {
+        deepseek_v3 = {
           __inherited_from = "openai",
-          api_key_name = "DEEPSEEK_CHAT_API_KEY",
-          endpoint = "https://api.deepseek.com",
-          model = "deepseek-chat",
+          api_key_name = "OPENROUTER_API_KEY",
+          endpoint = "https://openrouter.ai/api/v1/",
+          model = "deepseek/deepseek-chat",
           temperature = 0,
           max_tokens = 8192,
+          disable_tools = true,
+          extra_request_body = {
+            provider= {
+              order= {
+                "DeepSeek",
+                "Together",
+                "Fireworks"
+              }
+            }
+          },
         },
         claude_sonnet = {
           __inherited_from = "openai",
           api_key_name = "OPENROUTER_API_KEY",
           endpoint = "https://openrouter.ai/api/v1/",
-          model = "anthropic/claude-3.5-sonnet:beta",
+          model = "anthropic/claude-3.7-sonnet:beta",
           temperature = 0,
           max_tokens = 8192,
         },
