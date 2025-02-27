@@ -43,6 +43,12 @@ return {
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
+      zls = {
+        settings = {
+          format_on_save = true,
+          -- enable_build_on_save = true
+        }
+      },
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
       rust_analyzer = {
               settings = {

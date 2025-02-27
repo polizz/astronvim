@@ -32,7 +32,7 @@ return {
             gR = { ":Telescope lsp_references<cr>", desc = "LSP References"},
             ["<Leader>b"] = { name = "Buffers" },
             ["<Leader>w"] = { ":w!<cr>", desc = "Save File" },
-            ["<Leader>ub"] = { function() theme_toggle.toggle() end, desc = "Toggle background" }
+            ["<Leader>ub"] = { function() theme_toggle.toggle() end, desc = "Toggle background" },
           }
         }
       }
