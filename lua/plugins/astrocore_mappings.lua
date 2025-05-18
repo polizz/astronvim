@@ -8,12 +8,16 @@ return {
       local theme_toggle = require("theme_toggle").init()
 
       _G.qrz = require("qrz")
+      _G.visual_bc = require("visual_bc")
 
       local astro = require("astrocore")
       local mappings = {}
 
       mappings = {
         mappings = {
+          v = {
+            ["<Leader>bb"] = { function() _G.visual_bc.calc()  end, desc = "Visual BC Calculate" },
+          },
           i = {
             ["kj"] = { "<ESC>", desc = "Escape" },
           },
