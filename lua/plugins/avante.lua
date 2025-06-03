@@ -58,17 +58,17 @@ return {
   ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
   config = function()
     require("avante").setup({
-      vendors = {
+      providers = {
         provider = "claude_sonnet", -- Recommend using Claude
         deepseek_r1 = {
           __inherited_from = "openai",
           api_key_name = "OPENROUTER_API_KEY",
           endpoint = "https://openrouter.ai/api/v1/",
           model = "deepseek/deepseek-r1",
-          temperature = 0,
           max_tokens = 8192,
           disable_tools = true,
           extra_request_body = {
+            temperature = 0,
             provider= {
               order= {
                 "DeepSeek",
@@ -83,10 +83,10 @@ return {
           api_key_name = "OPENROUTER_API_KEY",
           endpoint = "https://openrouter.ai/api/v1/",
           model = "deepseek/deepseek-chat",
-          temperature = 0,
           max_tokens = 8192,
           disable_tools = true,
           extra_request_body = {
+            temperature = 0,
             provider= {
               order= {
                 "DeepSeek",
@@ -101,7 +101,9 @@ return {
           api_key_name = "OPENROUTER_API_KEY",
           endpoint = "https://openrouter.ai/api/v1/",
           model = "anthropic/claude-3.7-sonnet:beta",
-          temperature = 0,
+          extra_request_body = {
+            temperature = 0,
+          },
           max_tokens = 8192,
         },
       },

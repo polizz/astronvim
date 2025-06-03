@@ -1,5 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
+  enabled = false,
   opts = function(_, opts)
     return require("astrocore").extend_tbl(opts, {
       defaults = {

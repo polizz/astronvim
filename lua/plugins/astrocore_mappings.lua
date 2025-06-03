@@ -12,6 +12,7 @@ return {
 
       local astro = require("astrocore")
       local mappings = {}
+      local Snacks = require("snacks")
 
       mappings = {
         mappings = {
@@ -32,8 +33,11 @@ return {
             -- ["<C-[>"] = { function() harpoon:list():prev() end, desc = "Harpoon Prev"   },
             -- ["<C-]>"] = { function() harpoon:list():next() end, desc = "Harpoon Next"   },
             ["<Leader>qq"] = { function() _G.qrz.lookup() end, desc = "QRZ callsign lookup" },
-            ["<Leader>fg"] = { ":Telescope live_grep<cr>", desc = "Live Grep"  },
-            gR = { ":Telescope lsp_references<cr>", desc = "LSP References"},
+            ["<Leader>fg"] = { function() Snacks.picker.grep() end, desc = "Live Grep"  },
+            ["<Leader>ff"] = { function() Snacks.picker.files() end, desc = "Find Files" },
+            ["<Leader>fs"] = { function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
+            ["<Leader><space>"] = { function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+            gR = { function() Snacks.picker.lsp_references() end, desc = "LSP References"},
             ["<Leader>b"] = { name = "Buffers" },
             ["<Leader>w"] = { ":w!<cr>", desc = "Save File" },
             ["<Leader>ub"] = { function() theme_toggle.toggle() end, desc = "Toggle background" },
