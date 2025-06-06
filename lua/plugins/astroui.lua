@@ -1,6 +1,10 @@
 return {
   "AstroNvim/astroui",
   opts = {
+    folding = {
+      enabled = true,
+      methods = { "treesitter", "lsp" , "indent" },
+    },
     colorscheme = "catppuccin-latte"
     -- colorscheme = "astrodark",
     -- icons = {
