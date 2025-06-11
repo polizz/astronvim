@@ -21,8 +21,11 @@ return {
           signcolumn = "auto", -- sets vim.opt.signcolumn to auto
           wrap = false, -- sets vim.opt.wrap
           showtabline = 2,
-          foldlevelstart = 1,
-          foldnestmax = 10
+          -- foldlevelstart = 1,
+          foldnestmax = 10,
+          tabstop = 2,
+          shiftwidth = 2,
+          -- shifttabstop = 2
         },
         g = {
           smart_case = true,
