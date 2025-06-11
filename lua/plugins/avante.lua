@@ -59,7 +59,52 @@ return {
   config = function()
     require("avante").setup({
       providers = {
-        provider = "claude_sonnet", -- Recommend using Claude
+        provider = "gemini_pro_25_pro_05_06", -- Recommend using Claude
+        claude_sonnet_4 = {
+          __inherited_from = "openai",
+          api_key_name = "OPENROUTER_API_KEY",
+          endpoint = "https://openrouter.ai/api/v1/",
+          model = "anthropic/claude-sonnet-4",
+          extra_request_body = {
+            temperature = 0,
+          },
+          max_tokens = 200000,
+        },
+        o3 = {
+          __inherited_from = "openai",
+          api_key_name = "OPENROUTER_API_KEY",
+          endpoint = "https://openrouter.ai/api/v1/",
+          model = "openai/o3",
+          max_tokens = 1000000,
+        },
+        o3_mini_high = {
+          __inherited_from = "openai",
+          api_key_name = "OPENROUTER_API_KEY",
+          endpoint = "https://openrouter.ai/api/v1/",
+          model = "openai/o3-mini-high",
+          max_tokens = 1000000,
+        },
+        gpt_41 = {
+          __inherited_from = "openai",
+          api_key_name = "OPENROUTER_API_KEY",
+          endpoint = "https://openrouter.ai/api/v1/",
+          model = "openai/gpt-4.1",
+          max_tokens = 1000000,
+        },
+        gpt_41_mini = {
+          __inherited_from = "openai",
+          api_key_name = "OPENROUTER_API_KEY",
+          endpoint = "https://openrouter.ai/api/v1/",
+          model = "openai/gpt-4.1-mini",
+          max_tokens = 1000000,
+        },
+        gemini_pro_25_pro_05_06 = {
+          __inherited_from = "openai",
+          api_key_name = "OPENROUTER_API_KEY",
+          endpoint = "https://openrouter.ai/api/v1/",
+          model = "google/gemini-2.5-pro-preview-05-06",
+          max_tokens = 1000000,
+        },
         deepseek_r1 = {
           __inherited_from = "openai",
           api_key_name = "OPENROUTER_API_KEY",
@@ -96,7 +141,7 @@ return {
             }
           },
         },
-        claude_sonnet = {
+        claude_sonnet_37 = {
           __inherited_from = "openai",
           api_key_name = "OPENROUTER_API_KEY",
           endpoint = "https://openrouter.ai/api/v1/",
@@ -107,7 +152,6 @@ return {
           max_tokens = 8192,
         },
       },
-      provider = "claude_sonnet", -- Recommend using Claude
       -- auto_suggestions_provider = "copilot", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
       ---Specify the special dual_boost mode
       ---1. enabled: Whether to enable dual_boost mode. Default to false.

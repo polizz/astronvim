@@ -51,17 +51,17 @@ return {
       },
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
       rust_analyzer = {
-              settings = {
-                ["rust-analyzer"] = {
-                  cargo = {
-                    extraEnv = { CARGO_PROFILE_RUST_ANALYZER_INHERITS = 'dev', },
-                    extraArgs = { "--profile", "rust-analyzer", "--target-dir", "/tmp/rust-analyzer" }, -- can also effect this `cargo check` option by setting `CARGO_TARGET_DIR` env value
-                    -- extraArgs = { "--target-dir", "/tmp/rust-analyzer" },
-                  },
-                },
-              },
+        settings = {
+          ["rust-analyzer"] = {
+            cargo = {
+              extraEnv = { CARGO_PROFILE_RUST_ANALYZER_INHERITS = 'dev', },
+              extraArgs = { "--profile", "rust-analyzer", "--target-dir", "/tmp/rust-analyzer" }, -- can also effect this `cargo check` option by setting `CARGO_TARGET_DIR` env value
+              -- extraArgs = { "--target-dir", "/tmp/rust-analyzer" },
             },
           },
+        },
+      },
+    },
     -- customize how language servers are attached
     handlers = {
       -- a function without a key is simply the default handler, functions take two parameters, the server name and the configured options table for that server
