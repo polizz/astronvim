@@ -18,23 +18,22 @@ return {
       preset = 'enter',
     },
     sources = {
-      -- Remove 'buffer' if you don't want text completions, by default it's only enabled when LSP returns no items
       default = { 'lsp' },
-      transform_items = function(_, items)
-        return vim.tbl_filter(function(item)
-          return item.kind ~= require('blink.cmp.types').CompletionItemKind.Snippet and item.kind ~= require('blink.cmp.types').CompletionItemKind.Text
-        end, items)
-      end,
+      -- transform_items = function(_, items)
+      --   return vim.tbl_filter(function(item)
+      --     return item.kind ~= require('blink.cmp.types').CompletionItemKind.Snippet and item.kind ~= require('blink.cmp.types').CompletionItemKind.Text
+      --   end, items)
+      -- end,
       providers = {
         lsp = {
           score_offset = 5,
-          -- transform_items = function(_, items)
-          --   return vim.tbl_filter(function(item)
-          --     vim.print ("Blink type: " .. item.kind)
-          --     return item.kind ~= require('blink.cmp.types').CompletionItemKind.Snippet and item.kind ~= require('blink.cmp.types').CompletionItemKind.Text
-          --     -- return false
-          --   end, items)
-          -- end,
+          transform_items = function(_, items)
+            return vim.tbl_filter(function(item)
+              vim.print ("Blink type: " .. item.kind)
+              return item.kind ~= require('blink.cmp.types').CompletionItemKind.Snippet and item.kind ~= require('blink.cmp.types').CompletionItemKind.Text
+              -- return false
+            end, items)
+          end,
         },
         path = { score_offset = 3 },
         buffer = { score_offset = 0  },
