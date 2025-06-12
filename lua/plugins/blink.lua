@@ -29,7 +29,6 @@ return {
           score_offset = 5,
           transform_items = function(_, items)
             return vim.tbl_filter(function(item)
-              vim.print ("Blink type: " .. item.kind)
               return item.kind ~= require('blink.cmp.types').CompletionItemKind.Snippet and item.kind ~= require('blink.cmp.types').CompletionItemKind.Text
               -- return false
             end, items)
@@ -43,7 +42,6 @@ return {
           --   return vim.tbl_filter(function(item)
           --     -- vim.print ("Blink type: " .. item.kind)
           --     -- return item.kind ~= require('blink.cmp.types').CompletionItemKind.Snippet and item.kind ~= require('blink.cmp.types').CompletionItemKind.Text
-          --     return false
           --   end, items)
           -- end,
         },
