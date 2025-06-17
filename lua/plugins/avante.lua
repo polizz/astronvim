@@ -59,7 +59,7 @@ return {
   config = function()
     require("avante").setup({
       providers = {
-        provider = "gemini_pro_25_pro_05_06", -- Recommend using Claude
+        provider = "gemini_pro_25_pro_06_05", -- Recommend using Claude
         claude_sonnet_4 = {
           __inherited_from = "openai",
           api_key_name = "OPENROUTER_API_KEY",
@@ -96,6 +96,13 @@ return {
           api_key_name = "OPENROUTER_API_KEY",
           endpoint = "https://openrouter.ai/api/v1/",
           model = "openai/gpt-4.1-mini",
+          max_tokens = 1000000,
+        },
+        gemini_pro_25_pro_06_05 = {
+          __inherited_from = "openai",
+          api_key_name = "OPENROUTER_API_KEY",
+          endpoint = "https://openrouter.ai/api/v1/",
+          model = "google/gemini-2.5-pro-preview",
           max_tokens = 1000000,
         },
         gemini_pro_25_pro_05_06 = {
