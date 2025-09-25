@@ -107,9 +107,9 @@ M.toggle = function()
 
   require("astrocore.toggles").background()
 
-local is_light = vim.go.background == "light"
-apply_colorscheme(is_light)
-write_theme_state(is_light)
+  local is_light = vim.go.background == "light"
+  apply_colorscheme(is_light)
+  write_theme_state(is_light)
 
   -- Reset flag after a short delay to allow file events to settle
   vim.defer_fn(function()
