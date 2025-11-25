@@ -22,7 +22,10 @@ return {
     mode = "split",
     -- Default formatter
     formatters = {
-      json = { 'jq' }, -- Make sure you have install jq in your system, e.g: brew install jq
+      json = {
+        'jq',  -- Make sure you have install jq in your system, e.g: brew install jq
+        '-S'
+      },
       html = {
         'prettier', -- Make sure you have install prettier in your system, e.g: npm install -g prettier
         '--parser',
